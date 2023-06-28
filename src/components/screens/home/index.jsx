@@ -1,7 +1,10 @@
+import { Container } from '@mui/material'
 import React from 'react'
 
+import Catalog from '../../ui/catalog'
+
 function HomePage() {
-	return <div>HomePage</div>
+	return <Catalog />
 }
 
 export default HomePage
