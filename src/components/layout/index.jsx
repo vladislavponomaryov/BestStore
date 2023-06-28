@@ -9,7 +9,7 @@ function Layout() {
 	return (
 		<div>
 			<Header />
-			<Container sx={{ my: 4 }}>
+			<Container sx={{ mt: 14, mb: 4 }}>
 				<HomePage />
 			</Container>
 		</div>
