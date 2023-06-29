@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import BasketIcon from './basketIcon'
-import BasketDrawer from './drawer'
+import BasketDrawerBar from './drawer/drawerBar'
 
 function Basket() {
 	const basketItems = useSelector(state => state.basket.items)
@@ -23,7 +23,7 @@ function Basket() {
 
 	return (
 		<>
-			<BasketDrawer basketItems={basketItems} state={state} toggleDrawer={toggleDrawer} />
+			<BasketDrawerBar basketItems={basketItems} state={state} toggleDrawer={toggleDrawer} />
 			<BasketIcon badgeCount={basketItems.length} state={state} toggleDrawer={toggleDrawer} />
 		</>
 	)

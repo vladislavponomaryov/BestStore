@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import BasketHeader from './basketHeader'
 import BasketItemsList from './basketItemsList'
 
-function BasketDrawer({ state, toggleDrawer, basketItems }) {
+function BasketDrawerBar({ state, toggleDrawer, basketItems }) {
 	return (
 		<Drawer anchor={'right'} open={state['right']} onClose={toggleDrawer('right', false)}>
 			<Box
@@ -29,4 +29,4 @@ function BasketDrawer({ state, toggleDrawer, basketItems }) {
 	)
 }
 
-export default BasketDrawer
+export default BasketDrawerBar
