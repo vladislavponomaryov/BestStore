@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 
 import ProductItem from './item/productItem'
 
-function Catalog() {
+function HomePage() {
 	const products = useSelector(state => state.catalog.items)
 
 	/*fetch('https://fakestoreapi.com/products')
@@ -18,4 +18,4 @@ function Catalog() {
 	)
 }
 
-export default Catalog
+export default HomePage

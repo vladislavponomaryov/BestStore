@@ -32,24 +32,24 @@ export default function MyAppBar() {
 		<AppBar position='static'>
 			<Container maxWidth='xl'>
 				<Toolbar disableGutters>
-					<StoreIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-					<Typography
-						variant='h6'
-						noWrap
-						component='a'
-						href='/'
-						sx={{
-							mr: 2,
-							display: { xs: 'none', md: 'flex' },
-							fontFamily: 'monospace',
-							fontWeight: 700,
-							letterSpacing: '.3rem',
-							color: 'inherit',
-							textDecoration: 'none',
-						}}
-					>
-						{STORE_NAME}
-					</Typography>
+					<Link to={'/'} style={{ display: 'flex', alignItems: 'center' }}>
+						<StoreIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color: 'white' }} />
+						<Typography
+							variant='h6'
+							noWrap
+							sx={{
+								mr: 2,
+								display: { xs: 'none', md: 'flex' },
+								fontFamily: 'monospace',
+								fontWeight: 700,
+								letterSpacing: '.3rem',
+								color: 'white',
+								textDecoration: 'none',
+							}}
+						>
+							{STORE_NAME}
+						</Typography>
+					</Link>
 
 					<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
 						<IconButton

@@ -2,7 +2,7 @@ import { Grid } from '@mui/material'
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 
-import useCatalogItems from '../../ui/catalog/hooks/useCatalogItems'
+import useCatalogItems from '../catalog/hooks/useCatalogItems'
 
 import CheckoutBasket from './checkoutBasket'
 import CheckoutComplete from './checkoutComplete'
