@@ -2,7 +2,7 @@ import { Grid } from '@mui/material'
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import ProductItem from './productItem'
+import ProductItem from './item/productItem'
 
 function Catalog() {
 	const products = useSelector(state => state.catalog.items)
@@ -13,7 +13,7 @@ function Catalog() {
 
 	return (
 		<Grid container spacing={2}>
-			{products ? products.map(item => <ProductItem key={item.id} item={item} />) : <h3>Loading products</h3>}
+			{products ? products.map(item => <ProductItem key={item.id} item={item} view='mini' />) : <h3>Loading products</h3>}
 		</Grid>
 	)
 }
