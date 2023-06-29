@@ -12,7 +12,7 @@ function BasketItemsList({ basketItems }) {
 			{basketItems.map(id => {
 				const { title, image } = catalogItems.find(item => item.id === id)
 
-				return <BasketItem id={id} image={image} title={title} />
+				return <BasketItem key={id} id={id} image={image} title={title} />
 			})}
 		</List>
 	)

@@ -7,7 +7,7 @@ import BasketDrawerBar from './drawer/drawerBar'
 function Basket() {
 	const basketItems = useSelector(state => state.basket.items)
 
-	const [state, setState] = useState({
+	const [drawerState, setDrawerState] = useState({
 		top: false,
 		left: false,
 		bottom: false,
@@ -18,13 +18,13 @@ function Basket() {
 		if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
 			return
 		}
-		setState({ ...state, ['right']: open })
+		setDrawerState({ ...drawerState, ['right']: open })
 	}
 
 	return (
 		<>
-			<BasketDrawerBar basketItems={basketItems} state={state} toggleDrawer={toggleDrawer} />
-			<BasketIcon badgeCount={basketItems.length} state={state} toggleDrawer={toggleDrawer} />
+			<BasketDrawerBar basketItems={basketItems} state={drawerState} toggleDrawer={toggleDrawer} />
+			<BasketIcon badgeCount={basketItems.length} toggleDrawer={toggleDrawer} />
 		</>
 	)
 }

@@ -13,7 +13,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 	},
 }))
 
-export default function BasketIcon({ badgeCount, toggleDrawer, state }) {
+export default function BasketIcon({ badgeCount, toggleDrawer }) {
 	return (
 		<IconButton aria-label='cart' color='inherit' onClick={toggleDrawer('right', true)}>
 			<StyledBadge badgeContent={badgeCount} color='secondary'>

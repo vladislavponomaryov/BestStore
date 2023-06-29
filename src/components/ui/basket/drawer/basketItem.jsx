@@ -15,15 +15,14 @@ function BasketItem({ id, image, title }) {
 				<img src={image} alt={title} />
 			</ListItemIcon>
 			<ListItemText primary={title} />
-			<ListItemButton sx={{ width: 30 }}>
-				<RemoveIcon
-					sx={{ position: 'relative', right: 10 }}
-					color='error'
-					onClick={() => {
-						dispatch(deleteItemInBasket(id))
-						dispatch(showAlert({ type: 'error', message: `${title} удалён из корзины!` }))
-					}}
-				/>
+			<ListItemButton
+				sx={{ flex: ' 0 0 30px' }}
+				onClick={() => {
+					dispatch(deleteItemInBasket(id))
+					dispatch(showAlert({ type: 'error', message: `${title} удалён из корзины!` }))
+				}}
+			>
+				<RemoveIcon sx={{ position: 'relative', right: 10 }} color='error' />
 			</ListItemButton>
 		</ListItem>
 	)
