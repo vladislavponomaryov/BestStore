@@ -17,11 +17,11 @@ export const router = createBrowserRouter([
 				element: <HomePage />,
 			},
 			{
-				path: '/catalog/product/:productId',
+				path: 'catalog/product/:productId',
 				element: <ProductPage />,
 			},
 			{
-				path: '/checkout',
+				path: 'checkout',
 				element: <CheckoutPage />,
 			},
 		],

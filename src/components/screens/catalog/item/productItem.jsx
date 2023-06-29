@@ -16,7 +16,7 @@ function ProductItem({ item, view }) {
 	return (
 		<Grid item xs={3} key={id}>
 			<Card>
-				<Link to='asd'>
+				<Link to={`catalog/product/${id}`}>
 					<CardActionArea sx={{ pb: 2 }}>
 						<CardMedia component='img' image={image} alt={title} sx={{ height: 200, width: '70%', objectFit: 'contain', my: 2, mx: 'auto' }} />
 						<CardContent sx={{ py: 0 }}>

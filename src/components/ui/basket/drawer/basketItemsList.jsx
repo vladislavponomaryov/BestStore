@@ -8,7 +8,7 @@ function BasketItemsList({ basketItems }) {
 	const catalogItems = useSelector(state => state.catalog.items)
 
 	return (
-		<List>
+		<List dense sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
 			{basketItems.map(id => {
 				const { title, image } = catalogItems.find(item => item.id === id)
 
