@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 
-import BasketDrawer from './basketDrawer'
 import BasketIcon from './basketIcon'
+import BasketDrawer from './drawer'
 
 function Basket() {
 	const basketItems = useSelector(state => state.basket.items)
-	console.log(basketItems)
 
 	const [state, setState] = useState({
 		top: false,

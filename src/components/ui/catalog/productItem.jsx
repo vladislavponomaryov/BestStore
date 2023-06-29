@@ -2,6 +2,7 @@ import { Button, Card, CardActions, CardContent, CardHeader, CardMedia, Grid, Ty
 import React from 'react'
 import { useDispatch } from 'react-redux'
 
+import { showAlert } from '../../../store/slices/appSlice'
 import { addItemInBasket } from '../../../store/slices/basketSlice'
 
 function ProductItem({ item }) {
@@ -22,6 +23,7 @@ function ProductItem({ item }) {
 					<Button
 						onClick={() => {
 							dispatch(addItemInBasket(id))
+							dispatch(showAlert({ type: 'success', message: `${title} добавлен в корзину!` }))
 						}}
 					>
 						В корзину
