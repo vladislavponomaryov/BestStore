@@ -3,8 +3,9 @@ import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 
 import Layout from '../components/layout'
-import HomePage from '../components/screens/catalog'
+import CategoryPage from '../components/screens/category'
 import CheckoutPage from '../components/screens/checkout/checkoutPage'
+import HomePage from '../components/screens/home'
 import ProductPage from '../components/screens/product'
 
 export const router = createBrowserRouter([
@@ -19,6 +20,10 @@ export const router = createBrowserRouter([
 			{
 				path: 'catalog/product/:productId',
 				element: <ProductPage />,
+			},
+			{
+				path: 'catalog/categories/:categoryName',
+				element: <CategoryPage />,
 			},
 			{
 				path: 'checkout',

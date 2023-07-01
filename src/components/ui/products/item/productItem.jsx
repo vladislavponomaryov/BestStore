@@ -2,7 +2,7 @@ import { Card, CardActionArea, CardActions, CardContent, CardHeader, CardMedia, 
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import AddToBasket from '../../../ui/basket/addToBasket'
+import AddToBasket from '../../basket/addToBasket'
 
 import ProductPrice from './productPrice'
 

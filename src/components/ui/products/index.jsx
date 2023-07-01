@@ -1,12 +1,9 @@
 import { Grid } from '@mui/material'
 import React from 'react'
-import { useSelector } from 'react-redux'
 
 import ProductItem from './item/productItem'
 
-function HomePage() {
-	const products = useSelector(state => state.catalog.items)
-
+function ProductsComponent({ products }) {
 	/*fetch('https://fakestoreapi.com/products')
 		.then(response => response.json())
 		.then(json => setProducts(json))*/
@@ -18,4 +15,4 @@ function HomePage() {
 	)
 }
 
-export default HomePage
+export default ProductsComponent

@@ -202,6 +202,7 @@ const initialState = {
 			rating: { rate: 3.6, count: 145 },
 		},
 	],
+	categories: ['electronics', 'jewelery', "men's clothing", "women's clothing"],
 }
 
 export const catalogSlice = createSlice({
