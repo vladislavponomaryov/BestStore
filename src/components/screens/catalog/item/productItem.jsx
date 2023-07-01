@@ -1,16 +1,13 @@
-import { Button, Card, CardActionArea, CardActions, CardContent, CardHeader, CardMedia, Grid, Typography } from '@mui/material'
+import { Card, CardActionArea, CardActions, CardContent, CardHeader, CardMedia, Grid, Typography } from '@mui/material'
 import React from 'react'
-import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import { showAlert } from '../../../../store/slices/appSlice'
-import { addItemInBasket } from '../../../../store/slices/basketSlice'
+import AddToBasket from '../../../ui/basket/addToBasket'
 
 import ProductPrice from './productPrice'
 
 function ProductItem({ item, view }) {
 	const { id, title, price, description, image } = item
-	const dispatch = useDispatch()
 	const formatTitle = title && title.length < 40 ? title : title.slice(0, 40) + '...'
 
 	return (
@@ -31,14 +28,7 @@ function ProductItem({ item, view }) {
 					</CardActionArea>
 				</Link>
 				<CardActions sx={{ justifyContent: 'center', my: 1 }}>
-					<Button
-						onClick={() => {
-							dispatch(addItemInBasket(id))
-							dispatch(showAlert({ type: 'success', message: `${title} добавлен в корзину!` }))
-						}}
-					>
-						В корзину
-					</Button>
+					<AddToBasket id={id} title={title} />
 				</CardActions>
 			</Card>
 		</Grid>
