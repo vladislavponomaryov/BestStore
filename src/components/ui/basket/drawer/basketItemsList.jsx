@@ -1,20 +1,29 @@
 import { List } from '@mui/material'
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
 
 import BasketItem from './basketItem'
 
 function BasketItemsList({ basketItems }) {
-	const catalogItems = useSelector(state => state.catalog.items)
+	const [catalogItems, setCatalogItems] = useState(null)
+
+	useEffect(() => {
+		fetch('https://fakestoreapi.com/products')
+			.then(response => response.json())
+			.then(json => setCatalogItems(json))
+	}, [])
 
 	return (
-		<List dense sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-			{basketItems.map(id => {
-				const { title, image } = catalogItems.find(item => item.id === id)
+		<>
+			{catalogItems && (
+				<List dense sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+					{basketItems.map(id => {
+						const { title, image } = catalogItems.find(item => item.id === id)
 
-				return <BasketItem key={id} id={id} image={image} title={title} />
-			})}
-		</List>
+						return <BasketItem key={id} id={id} image={image} title={title} />
+					})}
+				</List>
+			)}
+		</>
 	)
 }
 

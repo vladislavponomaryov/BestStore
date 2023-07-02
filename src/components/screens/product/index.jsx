@@ -1,17 +1,25 @@
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 import EditIcon from '@mui/icons-material/Edit'
 import { Box, Button, Divider, Grid, IconButton, Tooltip, Typography } from '@mui/material'
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import AddToBasket from '../../ui/basket/addToBasket'
 
 function ProductPage() {
 	const id = useParams()?.productId
-	const product = useSelector(state => state.catalog.items.find(item => item.id == id))
-	const { title, price, description, image } = product
+	const [product, setProduct] = useState(null)
 	const navigate = useNavigate()
+
+	useEffect(() => {
+		fetch(`https://fakestoreapi.com/products/${id}`)
+			.then(response => response.json())
+			.then(json => setProduct(json))
+	}, [])
+
+	if (product == null) return 'Loading data'
+
+	const { title, price, description, image } = product
 
 	return (
 		<Grid container spacing={2}>

@@ -1,10 +1,15 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
 
 function useCatalogItems(productIds) {
-	const productItems = useSelector(state => state.catalog.items)
+	const [products, setProducts] = useState(null)
 
-	return productIds.map(id => productItems.find(item => item.id == id))
+	useEffect(() => {
+		fetch('https://fakestoreapi.com/products')
+			.then(response => response.json())
+			.then(json => setProducts(json))
+	}, [])
+
+	return productIds.map(id => products.find(item => item.id == id))
 }
 
 export default useCatalogItems

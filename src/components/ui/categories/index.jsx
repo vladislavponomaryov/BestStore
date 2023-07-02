@@ -1,10 +1,14 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
 
 import Category from './category'
 
 function Categories({ view }) {
-	const categories = useSelector(state => state.catalog.categories)
+	const [categories, setСategories] = useState([])
+	useEffect(() => {
+		fetch(`https://fakestoreapi.com/products/categories`)
+			.then(res => res.json())
+			.then(json => setСategories(json))
+	}, [])
 
 	return (
 		<>
