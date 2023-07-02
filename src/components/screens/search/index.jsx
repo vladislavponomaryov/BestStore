@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import ProductsComponent from '../../ui/products'
 
 function SearchPage() {
-	const searchParams = useParams()?.searchParams
+	const searchParams = useParams()?.searchParams.toLowerCase()
 	const products = useSelector(state => state.catalog.items)
 	const searchItems = products.filter(item => item.title.toLowerCase().includes(searchParams))
 

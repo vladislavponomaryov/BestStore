@@ -26,12 +26,12 @@ function ProductPage() {
 					</IconButton>
 				</Tooltip>
 			</Grid>
-			<Grid item xs={6}>
+			<Grid item xs={12} sm={6}>
 				<Box sx={{ mt: 3 }}>
 					<img src={image} alt={title} />
 				</Box>
 			</Grid>
-			<Grid item xs={6}>
+			<Grid item xs={12} sm={6}>
 				<Box sx={{ mt: 3 }}>
 					<Typography variant='h6' sx={{ mb: 2 }}>
 						{title}

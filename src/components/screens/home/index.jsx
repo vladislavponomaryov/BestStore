@@ -1,12 +1,17 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
 
 import ProductsComponent from '../../ui/products'
 
 function HomePage() {
-	const allProducts = useSelector(state => state.catalog.items)
+	const [products, setProducts] = useState()
 
-	return <ProductsComponent products={allProducts} />
+	useEffect(() => {
+		fetch('https://fakestoreapi.com/products')
+			.then(response => response.json())
+			.then(json => setProducts(json))
+	}, [])
+
+	return <ProductsComponent products={products} />
 }
 
 export default HomePage

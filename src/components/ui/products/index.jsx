@@ -4,13 +4,9 @@ import React from 'react'
 import ProductItem from './item/productItem'
 
 function ProductsComponent({ products }) {
-	/*fetch('https://fakestoreapi.com/products')
-		.then(response => response.json())
-		.then(json => setProducts(json))*/
-
 	return (
 		<Grid container spacing={2}>
-			{products ? products.map(item => <ProductItem key={item.id} item={item} view='mini' />) : <h3>Loading products</h3>}
+			{products ? products.map(item => <ProductItem key={item.id} item={item} />) : <h3>Loading products</h3>}
 		</Grid>
 	)
 }

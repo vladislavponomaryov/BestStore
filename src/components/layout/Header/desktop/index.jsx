@@ -33,14 +33,6 @@ function DesktopAppBar(props) {
 
 			<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 				<Categories />
-				{/*{PAGES.map((page, index) => {
-					const { title, path } = page
-					return (
-						<Link key={`mobile${index}`} to={path}>
-							<Button sx={{ my: 2, color: 'white', display: 'block' }}>{title}</Button>
-						</Link>
-					)
-				})}*/}
 			</Box>
 
 			<SearchComponent />

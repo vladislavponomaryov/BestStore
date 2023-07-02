@@ -12,8 +12,6 @@ function CategoryPage() {
 			.then(json => setCategoryProducts(json))
 	}, [categoryName])
 
-	console.log(categoryName)
-
 	return <ProductsComponent key={categoryName} products={categoryProducts} />
 }
 
