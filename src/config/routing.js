@@ -7,6 +7,7 @@ import CategoryPage from '../components/screens/category'
 import CheckoutPage from '../components/screens/checkout/checkoutPage'
 import HomePage from '../components/screens/home'
 import ProductPage from '../components/screens/product'
+import SearchPage from '../components/screens/search'
 
 export const router = createBrowserRouter([
 	{
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
 			{
 				path: 'catalog/categories/:categoryName',
 				element: <CategoryPage />,
+			},
+			{
+				path: 'catalog/search/:searchParams',
+				element: <SearchPage />,
 			},
 			{
 				path: 'checkout',
